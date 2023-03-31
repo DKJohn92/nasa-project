@@ -9,7 +9,8 @@
     "client": "npm start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npm run build --prefix client && npm start --prefix server",
-    "develop": "npm run build --prefix client && npm run watch --prefix server"
+    "develop": "npm run build --prefix client && npm run watch --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server"
   },
   "keywords": [],
   "author": "",
