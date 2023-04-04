@@ -1,3 +1,4 @@
+const { mongoConnect } = require("../services/mongo");
 const launches = require("./launches.mongo");
 const planets = require("./planets.mongo");
 
@@ -35,6 +36,7 @@ async function getLatestFlightNumber() {
 }
 
 async function saveLaunch(launch) {
+  await mongoConnect();
   const planetExist = await planets.findOne({ keplerName: launch.target });
   if (!planetExist) {
     throw new Error(`No Planet for the target found`);
