@@ -6,9 +6,8 @@ jobs:
       - image: cimg/node:14.20.0
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
+          install-command: touch .env && echo "adminUser=$adminUser" > .env && echo "PW=$PW" > .env
           name: install dependencies
           command: npm install && npm install --prefix server
       - save_cache:

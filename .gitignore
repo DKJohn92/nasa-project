@@ -9,3 +9,5 @@ client/node_modules
 server/public/
 
 client/public/build
+
+.env
