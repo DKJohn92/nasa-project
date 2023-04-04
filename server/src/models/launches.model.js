@@ -104,6 +104,7 @@ async function getLatestFlightNumber() {
 }
 
 async function saveLaunch(launch) {
+  await mongoConnect();
   await launches.findOneAndUpdate(
     {
       flightNumber: launch.flightNumber,
